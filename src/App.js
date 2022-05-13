@@ -4,7 +4,7 @@ import Home from './components/Home'
 function App() {
   return (
    <div>
-     <h1>Hello world!!!!</h1>
+     {/* <h1>Hello world!!!!</h1> */}
      {/* <Loader/> */}
      <Routes>
       <Route path="/" element ={<Home/>}/>
