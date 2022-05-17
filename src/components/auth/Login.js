@@ -12,7 +12,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from "../../redux/actions/auth";
 import { useNavigate } from "react-router";
@@ -23,11 +23,16 @@ const Login = () => {
     const login = ()=> dispatch(loginUser(email,password))
     const auth = useSelector(state=>state.auth)
     const navigate = useNavigate()
-    
-    if(auth.token)
-   {
-    navigate('/')
-   }
+    useEffect(()=>{
+      if(auth.token)
+      {
+       navigate('/')
+      }
+      
+
+    },[auth.token,navigate])
+
+
    
     
 
